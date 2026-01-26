@@ -1,0 +1,26 @@
+.about-section {
+    margin: 6vh auto;
+    padding: 4vh 4vw;
+    width: min(90vw, 1100px);
+    color: #fff;
+    text-align: initial;
+}
+
+.about-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 2rem;
+    margin-bottom: 1.5vh;
+}
+
+.about-icon {
+    font-size: 2rem;
+    line-height: 1;
+}
+
+.about-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 70ch;
+}

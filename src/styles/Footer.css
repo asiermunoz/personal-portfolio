@@ -1,0 +1,11 @@
+.footer {
+    background-color: #222;
+    color: white;
+    text-align:left;
+    align-content: center;
+    padding: 20px;
+    min-height: 15vh;
+    max-height: 15vh;                       
+    font-size: small;
+    width: auto;
+}

@@ -1,0 +1,55 @@
+body {
+    background: #222;
+    margin: 0;
+}
+
+.home-page-content {
+
+    margin-top: 5vh;
+    width: 80vw;
+}
+
+.project-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+}
+
+@media (max-width: 768px) {
+    .project-container {
+        grid-template-columns: 1fr;
+        width: 90vw;
+    }
+}
+
+.titulo-intro {
+    display: block;
+    text-align: center;
+    padding: 1vh;
+    font-size: xx-large;
+}
+
+.texto-intro {
+    display: block;
+    text-align: center;
+
+}
+
+.projects-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: 3vh 10px 2vh;
+}
+
+.projects-icon {
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+
+
+
+
