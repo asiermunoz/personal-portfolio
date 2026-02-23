@@ -5,7 +5,7 @@ import Footer from '../layout/Footer'
 import ProjectCard from '../home/ProjectCard'
 import About from '../home/About'
 import Experience from '../home/Experience'
-import foto from '../../assets/playpal.png'
+import foto from '../../assets/ejemplo.avif'
 import Intro from '../home/Intro'
 
 function Home() {
