@@ -5,8 +5,11 @@ import Footer from '../layout/Footer'
 import ProjectCard from '../home/ProjectCard'
 import About from '../home/About'
 import Experience from '../home/Experience'
-import foto from '../../assets/playpal.png'
 import Intro from '../home/Intro'
+
+import WeatherApp from '../../assets/WeatherApp.png'
+import CPUSim from '../../assets/CPU_Simulator.png'
+
 
 function Home() {
     return (
@@ -22,11 +25,19 @@ function Home() {
                 </span>
                 <div className='project-container'>
                     <ProjectCard
-                        title='PlayPal'
-                        description='esto es una aplicacion que permite a los usuarios reservar canchas de futbol en cualquier lugar de venezuela'
-                        link='https://github.com/carlosega19/PlayPal'
-                        technologies={['react', 'node', 'mongodb', 'springboot']}
-                        imageUrl={foto}
+                        title='Weather App'
+                        description='Esta es una app sencilla que permite ver el clima de cualquier ciudad del mundo'
+                        link='https://github.com/asiermunoz/WeatherApp'
+                        technologies={['HTML', 'JavaScript', 'CSS', 'API']}
+                        imageUrl={WeatherApp}
+                    />
+
+                    <ProjectCard
+                        title='CPU Simulator'
+                        description='Simulador de algoritmos de planificacion de la CPU'
+                        link='https://github.com/asiermunoz/Simulador-de-CPU'
+                        technologies={['Python', 'Django']}
+                        imageUrl={CPUSim}
                     />
                 </div>
 
