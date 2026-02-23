@@ -1,4 +1,4 @@
-import '/Users/asiermunoz/Documents/personal-portfolio/src/styles/Navbar.css'
+import '../../styles/Navbar.css'
 import { scrollToSection } from '../../utils/scroll';
 
 function Navbar() {

@@ -1,4 +1,4 @@
-import '/Users/asiermunoz/Documents/personal-portfolio/src/styles/About.css'
+import '../../styles/About.css'
 
 function About() {
 	return (

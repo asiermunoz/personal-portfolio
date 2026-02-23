@@ -1,11 +1,11 @@
-import '/Users/asiermunoz/Documents/personal-portfolio/src/styles/Home.css'
+import '../../styles/Home.css'
 
 import Navbar from '../layout/Navbar'
 import Footer from '../layout/Footer'
 import ProjectCard from '../home/ProjectCard'
 import About from '../home/About'
 import Experience from '../home/Experience'
-import foto from '/Users/asiermunoz/Documents/personal-portfolio/src/assets/playpal.png'
+import foto from '../../assets/playpal.png'
 import Intro from '../home/Intro'
 
 function Home() {

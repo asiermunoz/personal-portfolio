@@ -1,4 +1,4 @@
-import '/Users/asiermunoz/Documents/personal-portfolio/src/styles/Footer.css'
+import '../../styles/Footer.css'
 
 //PENDING: Add links for social media
 function Footer() {

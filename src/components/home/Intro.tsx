@@ -1,4 +1,4 @@
-import '/Users/asiermunoz/Documents/personal-portfolio/src/styles/Intro.css'
+import '../../styles/Intro.css'
 
 function Intro() {
     return (
