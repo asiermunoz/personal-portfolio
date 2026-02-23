@@ -2,56 +2,32 @@ import '/Users/asiermunoz/Documents/personal-portfolio/src/styles/Home.css'
 
 import Navbar from '../layout/Navbar'
 import Footer from '../layout/Footer'
-import ProjectCard from '../home/ProjectCard' 
+import ProjectCard from '../home/ProjectCard'
 import About from '../home/About'
 import Experience from '../home/Experience'
 import foto from '/Users/asiermunoz/Documents/personal-portfolio/src/assets/playpal.png'
+import Intro from '../home/Intro'
 
 function Home() {
-    return(    
+    return (
         <>
             <Navbar />
-            <main className='home-page-content'>
-                <span className='titulo-intro'> Hey, soy Asier</span>
-                <p className='texto-intro'> Bienvenido a mi portafolio personal. Soy Ingeniero de Software y espero que te guste este proyecto</p>
+
+            <main className='home-page-content' id='home'>
+                <Intro />
 
                 <span className='projects-title'>
                     <span className='material-symbols-outlined projects-icon'>construction</span>
                     Proyectos
                 </span>
                 <div className='project-container'>
-                    <ProjectCard 
-                title='PlayPal' 
-                description='esto es una aplicacion que permite a los usuarios reservar canchas de futbol en cualquier lugar de venezuela' 
-                link='https://github.com/carlosega19/PlayPal' 
-                technologies={[]}
-                imageUrl={foto}
-                />
-
-                <ProjectCard 
-                title='PlayPal' 
-                description='esto es una aplicacion que permite a los usuarios reservar canchas de futbol en cualquier lugar de venezuela' 
-                link='https://github.com/carlosega19/PlayPal' 
-                technologies={[]}
-                imageUrl={foto}
-                />
-
-                <ProjectCard 
-                title='PlayPal' 
-                description='esto es una aplicacion que permite a los usuarios reservar canchas de futbol en cualquier lugar de venezuela' 
-                link='https://github.com/carlosega19/PlayPal' 
-                technologies={[]}
-                imageUrl={foto}
-                />
-
-                <ProjectCard 
-                title='PlayPal' 
-                description='esto es una aplicacion que permite a los usuarios reservar canchas de futbol en cualquier lugar de venezuela' 
-                link='https://github.com/carlosega19/PlayPal' 
-                technologies={[]}
-                imageUrl={foto}
-                />
-
+                    <ProjectCard
+                        title='PlayPal'
+                        description='esto es una aplicacion que permite a los usuarios reservar canchas de futbol en cualquier lugar de venezuela'
+                        link='https://github.com/carlosega19/PlayPal'
+                        technologies={[]}
+                        imageUrl={foto}
+                    />
                 </div>
 
                 <Experience
@@ -72,9 +48,9 @@ function Home() {
 
             </main>
             <Footer />
-            
+
         </>
-        
+
     )
 
 }

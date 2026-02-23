@@ -2,7 +2,7 @@ import '/Users/asiermunoz/Documents/personal-portfolio/src/styles/About.css'
 
 function About() {
 	return (
-		<section className='about-section'>
+		<section className='about-section' id='about'>
 			<h2 className='about-title'>
 				<span className='material-symbols-outlined about-icon'>remember_me</span>
 				Sobre Mi

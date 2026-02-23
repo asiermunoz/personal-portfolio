@@ -4,12 +4,13 @@ body {
 }
 
 .home-page-content {
-
-    margin-top: 5vh;
-    width: 80vw;
+    margin: 10vh auto 0;
+    width: 90vw;
+    max-width: 1200px;
+    box-sizing: border-box;
 }
 
-.project-container{
+.project-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
@@ -22,18 +23,7 @@ body {
     }
 }
 
-.titulo-intro {
-    display: block;
-    text-align: center;
-    padding: 1vh;
-    font-size: xx-large;
-}
 
-.texto-intro {
-    display: block;
-    text-align: center;
-
-}
 
 .projects-title {
     display: inline-flex;
@@ -48,8 +38,3 @@ body {
     font-size: 1.6rem;
     line-height: 1;
 }
-
-
-
-
-

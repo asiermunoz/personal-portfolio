@@ -1,8 +1,9 @@
 .experience-section {
-    margin: 6vh auto;
-    padding: 4vh 4vw;
-    width: min(90vw, 1100px);
+    margin: 6vh 0;
+    padding: 2vh 0;
+    width: 100%;
     color: #e8e8e8;
+    box-sizing: border-box;
 }
 
 .experience-title {
@@ -20,7 +21,7 @@
 .experience-item {
     display: grid;
     grid-template-columns: 230px 1fr;
-    
+
     align-items: center;
 }
 
@@ -47,6 +48,8 @@
     color: #d8d8d8;
     line-height: 1.6;
     margin-bottom: 1.2vh;
+    text-align: justify;
+    width: 100%;
 }
 
 .experience-link {
@@ -65,5 +68,9 @@
 @media (max-width: 768px) {
     .experience-item {
         grid-template-columns: 1fr;
+    }
+
+    .experience-description {
+        padding-top: 1vh;
     }
 }

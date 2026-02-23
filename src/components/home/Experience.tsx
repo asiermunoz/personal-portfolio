@@ -3,7 +3,7 @@ import type { ExperienceProps } from '/Users/asiermunoz/Documents/personal-portf
 
 function Experience({ title, items }: ExperienceProps) {
 	return (
-		<section className='experience-section'>
+		<section className='experience-section' id='experience'>
 			<h2 className='experience-title'>{title}</h2>
 
 			<div className='experience-grid'>

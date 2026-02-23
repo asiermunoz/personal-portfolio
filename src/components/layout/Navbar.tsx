@@ -1,12 +1,13 @@
 import '/Users/asiermunoz/Documents/personal-portfolio/src/styles/Navbar.css'
+import { scrollToSection } from '../../utils/scroll';
 
 function Navbar() {
-    return(
+    return (
         <nav className='nav-bar'>
-            <button className='nav-button'> Home</button>
-            <button className='nav-button'> Experience</button>
-            <button className='nav-button'> About</button>
-            <button className='nav-button'> Contact</button>
+            <button className='nav-button' onClick={() => scrollToSection('home')}> Home</button>
+            <button className='nav-button' onClick={() => scrollToSection('experience')}> Experience</button>
+            <button className='nav-button' onClick={() => scrollToSection('about')}> About</button>
+            <button className='nav-button' onClick={() => scrollToSection('contact')}> Contact</button>
         </nav>
     )
 

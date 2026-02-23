@@ -7,7 +7,7 @@
     background-color: rgb(189, 205, 210);
     border-radius: 30px;
     padding: 0.5vh 1.5vh;
-    margin: 1vh;
+    margin: 20px 0px;
     display: flex;
     flex-direction: row;
     gap: 1vh;
@@ -28,6 +28,19 @@
 }
 
 .nav-button:hover {
-    background-color: rgb(189, 205, 210);
+    background-color: rgb(152, 165, 170);
     transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .nav-bar {
+        width: 90vw;
+        justify-content: space-around;
+        padding: 0.5vh 0;
+    }
+
+    .nav-button {
+        font-size: 0.85rem;
+        padding: 4px 6px;
+    }
 }
