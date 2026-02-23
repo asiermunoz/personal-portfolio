@@ -25,7 +25,7 @@ function Home() {
                         title='PlayPal'
                         description='esto es una aplicacion que permite a los usuarios reservar canchas de futbol en cualquier lugar de venezuela'
                         link='https://github.com/carlosega19/PlayPal'
-                        technologies={[]}
+                        technologies={['react', 'node', 'mongodb', 'springboot']}
                         imageUrl={foto}
                     />
                 </div>

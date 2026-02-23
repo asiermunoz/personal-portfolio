@@ -1,5 +1,5 @@
-import '/Users/asiermunoz/Documents/personal-portfolio/src/styles/Experience.css'
-import type { ExperienceProps } from '/Users/asiermunoz/Documents/personal-portfolio/src/types/experience'
+import '../../styles/Experience.css'
+import type { ExperienceProps, ExperienceItem } from '../../types/experience'
 
 function Experience({ title, items }: ExperienceProps) {
 	return (
@@ -7,7 +7,7 @@ function Experience({ title, items }: ExperienceProps) {
 			<h2 className='experience-title'>{title}</h2>
 
 			<div className='experience-grid'>
-				{items.map((item, index) => (
+				{items.map((item: ExperienceItem, index: number) => (
 					<article className='experience-item' key={`${item.company}-${index}`}>
 						<div>
 							<div className='experience-role'>{item.role}</div>
