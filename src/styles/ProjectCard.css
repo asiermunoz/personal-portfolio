@@ -42,6 +42,16 @@
 }
 
 .tech-tag {
+  font-style: italic;
+  color: #000000;
+  transition: transform 0.3s;
+}
+.tech-tag:hover {
+  cursor: default;
+  transform: translateY(-5px);
+}
+
+.tech-tag {
   background-color: #f0f0f0;
   padding: 5px 10px;
   border-radius: 5px;

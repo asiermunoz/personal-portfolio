@@ -1,5 +1,5 @@
-import type { ProjectCardProps } from'/Users/asiermunoz/Documents/personal-portfolio/src/types/project.d.ts'
-import '/Users/asiermunoz/Documents/personal-portfolio/src/styles/ProjectCard.css'
+import type { ProjectCardProps } from '../../types/project'
+import '../../styles/ProjectCard.css'
 import React from 'react';
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, technologies, link, imageUrl }) => {
