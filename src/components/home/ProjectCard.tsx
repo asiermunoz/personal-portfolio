@@ -1,19 +1,23 @@
 import type { ProjectCardProps } from '../../types/project'
 import '../../styles/ProjectCard.css'
-import React from 'react';
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, technologies, link, imageUrl }) => {
-
-    console.log('imageUrl:', imageUrl); 
-    return (
+const ProjectCard = ({ title, description, technologies, link, imageUrl }: ProjectCardProps) => {
+  return (
     <div className="project-card">
-      {imageUrl && <img src={imageUrl} alt={title} className="project-image" />}
+      {imageUrl && (
+        <img
+          src={imageUrl}
+          alt={`Captura de pantalla del proyecto ${title}`}
+          className="project-image"
+          loading="lazy"
+        />
+      )}
       <div className="project-content">
         <h3 className="project-title">{title}</h3>
         <p className="project-description">{description}</p>
         <div className="project-technologies">
-          {technologies.map((tech: string, index: number) => (
-            <span key={index} className="tech-tag">{tech}</span>
+          {technologies.map((tech: string) => (
+            <span key={tech} className="tech-tag">{tech}</span>
           ))}
         </div>
         <a href={link} target="_blank" rel="noopener noreferrer" className="project-link">
@@ -21,7 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, technolog
         </a>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard

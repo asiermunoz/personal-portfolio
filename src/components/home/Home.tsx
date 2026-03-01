@@ -7,9 +7,8 @@ import About from '../home/About'
 import Experience from '../home/Experience'
 import Intro from '../home/Intro'
 
-import WeatherApp from '../../assets/WeatherApp.png'
-import CPUSim from '../../assets/CPU_Simulator.png'
-
+import WeatherApp from '../../assets/WeatherApp.avif'
+import CPUSim from '../../assets/CPU_Simulator.avif'
 
 function Home() {
     return (
@@ -19,10 +18,10 @@ function Home() {
             <main className='home-page-content' id='home'>
                 <Intro />
 
-                <span className='projects-title'>
-                    <span className='material-symbols-outlined projects-icon'>construction</span>
+                <h2 className='projects-title'>
+                    <span className='material-symbols-outlined projects-icon' aria-hidden='true'>construction</span>
                     Proyectos
-                </span>
+                </h2>
                 <div className='project-container'>
                     <ProjectCard
                         title='Weather App'

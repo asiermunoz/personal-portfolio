@@ -1,28 +1,32 @@
+/* ============================
+   INTRO SECTION
+   ============================ */
+
 .intro-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: var(--space-3xl) 0;
+    text-align: center;
 }
 
 .titulo-intro {
     display: block;
-    text-align: center;
-    padding: 1vh;
-    font-size: xx-large;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: var(--space-md);
+    line-height: 1.2;
 }
 
 .texto-intro {
     display: block;
-    text-align: center;
-}
-
-@media (max-width: 768px) {
-    .titulo-intro {
-        font-size: 1.8rem;
-    }
-
-    .texto-intro {
-        font-size: 0.95rem;
-    }
+    color: var(--color-text-muted);
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    max-width: 600px;
+    line-height: 1.7;
 }

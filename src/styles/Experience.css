@@ -1,76 +1,91 @@
 .experience-section {
-    margin: 6vh 0;
-    padding: 2vh 0;
+    margin: var(--space-3xl) 0;
+    padding: var(--space-xl) 0;
     width: 100%;
-    color: #e8e8e8;
-    box-sizing: border-box;
+    color: var(--color-text);
 }
 
 .experience-title {
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 4vh;
-    color: #fff;
+    margin-bottom: var(--space-2xl);
 }
 
 .experience-grid {
     display: grid;
-    gap: 4vh 6vw;
+    gap: var(--space-2xl);
 }
 
 .experience-item {
     display: grid;
-    grid-template-columns: 230px 1fr;
-
-    align-items: center;
+    grid-template-columns: minmax(180px, 230px) 1fr;
+    gap: var(--space-lg);
+    align-items: start;
 }
 
 .experience-role {
-    color: #ffd34e;
+    color: var(--color-gold);
     font-weight: 700;
     font-size: 1.05rem;
-    margin-bottom: 0.5vh;
+    margin-bottom: var(--space-xs);
 }
 
 .experience-company {
-    color: #fff;
     font-size: 1.1rem;
     font-weight: 600;
-    margin-bottom: 0.5vh;
+    margin-bottom: var(--space-xs);
 }
 
 .experience-date {
-    color: #b5b5b5;
+    color: var(--color-text-muted);
     font-size: 0.9rem;
 }
 
 .experience-description {
-    color: #d8d8d8;
-    line-height: 1.6;
-    margin-bottom: 1.2vh;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
     text-align: justify;
-    width: 100%;
 }
 
 .experience-link {
-    color: #ffd34e;
+    color: var(--color-gold);
     font-weight: 600;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: var(--space-xs);
+    transition: color var(--transition-fast);
 }
 
 .experience-link:hover {
+    color: var(--color-accent-hover);
     text-decoration: underline;
 }
 
+.experience-link:focus-visible {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+}
+
+/* — Tablet — */
+@media (max-width: 1024px) {
+    .experience-item {
+        grid-template-columns: minmax(150px, 200px) 1fr;
+    }
+}
+
+/* — Mobile — */
 @media (max-width: 768px) {
     .experience-item {
         grid-template-columns: 1fr;
     }
 
     .experience-description {
-        padding-top: 1vh;
+        padding-top: var(--space-sm);
+    }
+
+    .experience-title {
+        font-size: 1.5rem;
     }
 }

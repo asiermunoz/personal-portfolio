@@ -1,0 +1,213 @@
+# 🔍 Portfolio Code Audit & Refactor Report
+
+---
+
+## Executive Summary
+
+### ✅ Strengths
+- **Clean component architecture** — Logical separation into `home/` and `layout/` directories with single-responsibility components
+- **TypeScript usage** — Proper type definitions for [ExperienceItem](file:///Users/asiermunoz/Documents/personal-portfolio/src/types/experience.d.ts#1-9), [ExperienceProps](file:///Users/asiermunoz/Documents/personal-portfolio/src/types/experience.d.ts#10-14), and [ProjectCardProps](file:///Users/asiermunoz/Documents/personal-portfolio/src/types/project.d.ts#1-8) in [.d.ts](file:///Users/asiermunoz/Documents/personal-portfolio/src/types/project.d.ts) files
+- **Basic responsive breakpoint** — A `768px` media query exists in most CSS files for mobile adaptation
+- **Semantic HTML elements** — Uses `<nav>`, `<footer>`, `<main>`, `<section>`, and `<article>` where appropriate
+- **Accessibility basics** — Footer social links have `aria-label` attributes; external links use `rel="noopener noreferrer"`
+
+### 🔴 Critical Weaknesses
+- **No CSS custom properties (design tokens)** — All colors, spacing, and fonts are hardcoded across 8 separate CSS files, making theming/maintenance very difficult
+- **Duplicate and conflicting CSS rules** — `body` styles defined in both [App.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/App.css) and [Home.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/Home.css); `.tech-tag` declared twice in [ProjectCard.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/ProjectCard.css)
+- **No tablet breakpoint** — Only a single `768px` breakpoint exists; layouts break between 769px–1024px
+- **Footer breaks on mobile** — Horizontal `flex` layout with no wrap causes overflow on small screens
+- **Missing meta tags** — No `<meta name="description">`, no Open Graph tags, poor `<title>` text
+- **Console.log in production code** — [ProjectCard.tsx](file:///Users/asiermunoz/Documents/personal-portfolio/src/components/home/ProjectCard.tsx) has a debug `console.log` statement
+- **Global `*` selector with `font-weight: 650`** — Aggressively sets all elements to semi-bold, overriding natural weights
+- **Unused `React` import** — [ProjectCard.tsx](file:///Users/asiermunoz/Documents/personal-portfolio/src/components/home/ProjectCard.tsx) imports `React` unnecessarily (React 19 doesn't need it for JSX)
+- **No focus styles** — Navbar buttons and links have no `:focus-visible` styles, harming keyboard navigation
+- **Image assets not optimized** — [WeatherApp.png](file:///Users/asiermunoz/Documents/personal-portfolio/src/assets/WeatherApp.png) is 1.2 MB; [playpal.png](file:///Users/asiermunoz/Documents/personal-portfolio/src/assets/playpal.png) is 2.2 MB (unused but bundled)
+
+---
+
+## Detailed Issue Table
+
+| Feature/File | Issue Found | Impact | Recommended Fix |
+|:---|:---|:---|:---|
+| [index.html](file:///Users/asiermunoz/Documents/personal-portfolio/index.html) | Missing `<meta name="description">` and Open Graph tags | **High** | Add SEO meta tags and descriptive `<title>` |
+| [index.html](file:///Users/asiermunoz/Documents/personal-portfolio/index.html) | Favicon references `src/assets` — won't resolve in production build | **High** | Move favicon to `/public/` and update href |
+| [App.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/App.css) | `body` styles duplicated in `Home.css` | **Med** | Consolidate into a single global file |
+| [App.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/App.css) | No CSS custom properties for colors/spacing | **High** | Create `:root` design tokens |
+| [Home.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/Home.css) | Duplicate `body` background rule | **Med** | Remove and defer to global stylesheet |
+| [Navbar.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/Navbar.css) | Global `* { font-weight: 650 }` — overrides all weights | **High** | Scope to `.nav-bar` or remove entirely |
+| [Navbar.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/Navbar.css) | No `:focus-visible` on buttons | **High** | Add accessible focus ring styles |
+| [Navbar.tsx](file:///Users/asiermunoz/Documents/personal-portfolio/src/components/layout/Navbar.tsx) | No mobile hamburger menu — buttons overflow on very small screens | **Med** | Add a mobile-friendly nav toggle |
+| [ProjectCard.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/ProjectCard.css) | `.tech-tag` defined twice (lines 44–52 + 54–59) | **Med** | Merge into a single rule |
+| [ProjectCard.tsx](file:///Users/asiermunoz/Documents/personal-portfolio/src/components/home/ProjectCard.tsx) | `console.log('imageUrl:', imageUrl)` left in production code | **Med** | Remove debug statement |
+| [ProjectCard.tsx](file:///Users/asiermunoz/Documents/personal-portfolio/src/components/home/ProjectCard.tsx) | Unused `import React` (React 19 auto-JSX transform) | **Low** | Remove the import |
+| [ProjectCard.tsx](file:///Users/asiermunoz/Documents/personal-portfolio/src/components/home/ProjectCard.tsx) | Uses `index` as `key` in `.map()` — anti-pattern | **Low** | Use `tech` string as key (unique within a card) |
+| [Footer.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/Footer.css) | No `flex-wrap` or mobile breakpoint — content overflows on small screens | **High** | Add `flex-wrap: wrap` and responsive layout |
+| [Footer.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/Footer.css) | `align-items: left` is invalid CSS (should be `flex-start`) | **Med** | Fix to a valid flex value |
+| [Experience.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/Experience.css) | Fixed `230px` left column can overflow small tablets | **Med** | Use `minmax()` or responsive width |
+| [Intro.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/Intro.css) | `font-size: xx-large` — non-fluid, keyword-based sizing | **Med** | Use `clamp()` for fluid typography |
+| [Home.tsx](file:///Users/asiermunoz/Documents/personal-portfolio/src/components/home/Home.tsx) | Projects title uses `<span>` instead of `<h2>` — breaks heading hierarchy | **Med** | Change to `<h2>` for proper semantic structure |
+| [About.css](file:///Users/asiermunoz/Documents/personal-portfolio/src/styles/About.css) | `color: #fff` redundant (already set on `body`) | **Low** | Remove since inherited |
+| Various CSS files | Mixed units: `vh`, `vw`, `px`, `rem`, `em` with no system | **Med** | Standardize spacing with CSS variables using `rem` |
+| [assets/](file:///Users/asiermunoz/Documents/personal-portfolio/src/assets) | `WeatherApp.png` (1.2 MB) and `playpal.png` (2.2 MB) are very large | **High** | Compress images or convert to WebP/AVIF |
+
+---
+
+## Refactored Code
+
+All changes below are applied directly to the codebase. Key improvements:
+
+### 1. Global Design Tokens & Reset (`App.css`)
+
+**Before:**
+```css
+body {
+    background-color: #222;
+    font-family: system-ui;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+```
+
+**After:**
+```css
+:root {
+  /* — Color Palette — */
+  --color-bg:          #1a1a2e;
+  --color-bg-surface:  #16213e;
+  --color-bg-card:     #0f3460;
+  --color-accent:      #e94560;
+  --color-accent-hover:#ff6b81;
+  --color-gold:        #ffd34e;
+  --color-text:        #eaeaea;
+  --color-text-muted:  #b0b0b0;
+  --color-border:      rgba(255, 255, 255, 0.08);
+
+  /* — Typography — */
+  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono:    'JetBrains Mono', monospace;
+
+  /* — Spacing scale (rem) — */
+  --space-xs:  0.25rem;
+  --space-sm:  0.5rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* — Borders & Shadows — */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --shadow-hover: 0 12px 40px rgba(233, 69, 96, 0.15);
+
+  /* — Transitions — */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+}
+```
+> Adds a centralized design system. Changing a single variable now updates the entire site.
+
+### 2. SEO & Performance (`index.html`)
+
+**Before:**
+```html
+<title>personal-portfolio</title>
+<link rel="icon" href="/src/assets/icono.png" />
+```
+
+**After:**
+```html
+<title>Asier Muñoz | Software Engineer Portfolio</title>
+<meta name="description" content="..." />
+<meta property="og:title" content="..." />
+<link rel="icon" href="/icono.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+```
+> Proper SEO tags, preconnected fonts for faster LCP, favicon moved to `public/`.
+
+### 3. Navbar Focus & Accessibility
+
+**Before:** No `:focus-visible` styles, global `* { font-weight: 650 }`.
+
+**After:**
+```css
+.nav-button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+```
+> Keyboard users can now see focus indicators. Removed the overly aggressive global `*` selector.
+
+### 4. Footer Responsive Fix
+
+**Before:** Footer had `display: flex` with no wrapping — content overflowed on mobile.
+
+**After:**
+```css
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    gap: var(--space-lg);
+    text-align: center;
+  }
+  .social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+```
+
+### 5. Duplicate `.tech-tag` Merge
+
+**Before:** Two separate `.tech-tag` blocks (lines 44–52 and 54–59 in ProjectCard.css).
+
+**After:** Merged into one clean rule block.
+
+### 6. Debug Code Removal
+
+**Before:**
+```tsx
+console.log('imageUrl:', imageUrl); // ← left in production
+import React from 'react';         // ← unnecessary in React 19
+```
+
+**After:** Both removed.
+
+### 7. Semantic HTML Fix
+
+**Before:**
+```tsx
+<span className='projects-title'>Proyectos</span>
+```
+
+**After:**
+```tsx
+<h2 className='projects-title'>Proyectos</h2>
+```
+
+---
+
+## Visual Verification
+
+````carousel
+![Desktop view — all sections render correctly with the new design system](/Users/asiermunoz/.gemini/antigravity/brain/975dff29-f6db-43ac-b7e5-6321bcde675a/desktop_view.png)
+<!-- slide -->
+![Mobile view (375px) — responsive layouts, stacked cards, and wrapped footer](/Users/asiermunoz/.gemini/antigravity/brain/975dff29-f6db-43ac-b7e5-6321bcde675a/mobile_view.png)
+````
+
+---
+
+## Best Practices Checklist for Future Features
+
+| # | Suggestion | Details |
+|:--|:-----------|:--------|
+| 1 | **Dark/Light Mode Toggle** | Leverage the CSS custom properties to swap `--color-bg`, `--color-text`, etc. using a `data-theme` attribute on `<html>`. Store preference in `localStorage`. |
+| 2 | **Optimize Largest Contentful Paint (LCP)** | Convert PNGs to WebP/AVIF, add `loading="lazy"` and `width`/`height` to images, preload critical hero content. Target LCP < 2.5s. |
+| 3 | **Add Page Transitions / Scroll Animations** | Use `IntersectionObserver` for reveal-on-scroll animations. Consider `framer-motion` for route transitions. |
+| 4 | **Extract Data to JSON/TS Constants** | Move project data and experience items to `src/data/projects.ts` and `src/data/experience.ts`. Makes future CMS integration trivial. |
+| 5 | **Add `prefers-reduced-motion` Support** | Wrap all CSS `transition` and `animation` in `@media (prefers-reduced-motion: no-preference)` to respect user accessibility settings. |

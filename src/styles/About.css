@@ -1,28 +1,44 @@
+/* ============================
+   ABOUT SECTION
+   ============================ */
+
 .about-section {
-    margin: 6vh 0;
-    padding: 2vh 0;
+    margin: var(--space-3xl) 0;
+    padding: var(--space-xl) 0;
     width: 100%;
-    color: #fff;
     text-align: initial;
-    box-sizing: border-box;
 }
 
 .about-title {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--space-sm);
     font-size: 2rem;
-    margin-bottom: 1.5vh;
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
 }
 
 .about-icon {
     font-size: 2rem;
     line-height: 1;
+    color: var(--color-gold);
 }
 
 .about-text {
     font-size: 1rem;
-    line-height: 1.6;
+    line-height: 1.7;
     text-align: justify;
-    width: 100%;
+    color: var(--color-text-muted);
+    max-width: 100%;
+}
+
+/* — Mobile — */
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 1.5rem;
+    }
+
+    .about-text {
+        font-size: 0.95rem;
+    }
 }
