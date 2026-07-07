@@ -9,6 +9,7 @@ import Intro from '../home/Intro'
 
 import WeatherApp from '../../assets/WeatherApp.avif'
 import CPUSim from '../../assets/CPU_Simulator.avif'
+import Cooking_Simulator from '../../assets/Cooking_Simulator.png'
 
 function Home() {
     return (
@@ -37,6 +38,13 @@ function Home() {
                         link='https://github.com/asiermunoz/Simulador-de-CPU'
                         technologies={['Python', 'Django']}
                         imageUrl={CPUSim}
+                    />
+                    <ProjectCard
+                        title='Cooking Simulator'
+                        description='Juego que simula una estación de comida (Arepas)'
+                        link='https://github.com/ucab-pow-202615/26998-pomc'
+                        technologies={['HTML', 'JavaScript', 'CSS', 'API']}
+                        imageUrl={Cooking_Simulator}
                     />
                 </div>
 
