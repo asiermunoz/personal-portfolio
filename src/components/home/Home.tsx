@@ -10,6 +10,7 @@ import Intro from '../home/Intro'
 import WeatherApp from '../../assets/WeatherApp.avif'
 import CPUSim from '../../assets/CPU_Simulator.avif'
 import Cooking_Simulator from '../../assets/Cooking_Simulator.png'
+import TasaClara from '../../assets/TasaClara.png'
 
 function Home() {
     return (
@@ -19,12 +20,13 @@ function Home() {
             <main className='home-page-content' id='home'>
                 <Intro />
 
-                <h2 className='projects-title'>
-                    <span className='material-symbols-outlined projects-icon' aria-hidden='true'>construction</span>
-                    Proyectos
-                </h2>
+                <div className='projects-heading'>
+                    <span className='mono-label'>Cartera de proyectos</span>
+                    <h2 className='projects-title'>Proyectos</h2>
+                </div>
                 <div className='project-container'>
                     <ProjectCard
+                        code='WTHR'
                         title='Weather App'
                         description='Esta es una app sencilla que permite ver el clima de cualquier ciudad del mundo'
                         link='https://github.com/asiermunoz/WeatherApp'
@@ -33,6 +35,7 @@ function Home() {
                     />
 
                     <ProjectCard
+                        code='CPU'
                         title='CPU Simulator'
                         description='Simulador de algoritmos de planificacion de la CPU'
                         link='https://github.com/asiermunoz/Simulador-de-CPU'
@@ -40,11 +43,20 @@ function Home() {
                         imageUrl={CPUSim}
                     />
                     <ProjectCard
+                        code='ARPS'
                         title='Cooking Simulator'
                         description='Juego que simula una estación de comida (Arepas)'
                         link='https://github.com/ucab-pow-202615/26998-pomc'
                         technologies={['HTML', 'JavaScript', 'CSS', 'API']}
                         imageUrl={Cooking_Simulator}
+                    />
+                    <ProjectCard
+                        code='VES'
+                        title='TasaClara'
+                        description='Tasas de cambio en Venezuela'
+                        link='https://github.com/asiermunoz/tasaclara'
+                        technologies={['express', 'cron-job', 'Vite', 'Ts', 'React', 'Vercel', 'Render', 'Neon']}
+                        imageUrl={TasaClara}
                     />
                 </div>
 

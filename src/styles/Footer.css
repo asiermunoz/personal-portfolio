@@ -24,8 +24,10 @@
 }
 
 .footer-content>span {
+    font-family: var(--font-mono);
     color: var(--color-text-muted);
-    font-size: 0.85rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.03em;
 }
 
 .social-links {
@@ -38,9 +40,11 @@
     display: flex;
     align-items: center;
     gap: var(--space-sm);
-    color: var(--color-text);
+    color: var(--color-text-muted);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
     transition:
         color var(--transition-fast),
         transform var(--transition-fast);

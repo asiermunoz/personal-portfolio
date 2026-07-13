@@ -1,32 +1,120 @@
 /* ============================
-   INTRO SECTION
+   INTRO / HERO SECTION
    ============================ */
 
 .intro-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-3xl) 0;
-    text-align: center;
+    padding: var(--space-3xl) 0 0;
+}
+
+.intro-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 640px;
+}
+
+.intro-eyebrow {
+    margin-bottom: var(--space-md);
 }
 
 .titulo-intro {
-    display: block;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--color-accent), var(--color-gold));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: var(--space-md);
-    line-height: 1.2;
+    font-family: var(--font-display);
+    font-size: clamp(2.75rem, 8vw, 5rem);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+    line-height: 1.05;
+    margin-bottom: var(--space-lg);
 }
 
 .texto-intro {
-    display: block;
     color: var(--color-text-muted);
-    font-size: clamp(0.95rem, 2vw, 1.15rem);
-    max-width: 600px;
+    font-size: clamp(1rem, 1.6vw, 1.15rem);
+    max-width: 560px;
     line-height: 1.7;
+}
+
+/* — Signature element: the ticker strip — */
+.ticker-strip {
+    margin-top: var(--space-2xl);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker-scroll 28s linear infinite;
+}
+
+.ticker-track:hover {
+    animation-play-state: paused;
+}
+
+.ticker-content {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    padding: var(--space-md) var(--space-lg);
+    white-space: nowrap;
+}
+
+.ticker-mark {
+    color: var(--color-accent);
+    font-size: 0.6rem;
+}
+
+@keyframes ticker-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ticker-track {
+        animation: none;
+    }
+
+    .ticker-content[aria-hidden='true'] {
+        display: none;
+    }
+
+    .ticker-strip {
+        overflow-x: auto;
+    }
+}
+
+/* — Mobile — */
+@media (max-width: 768px) {
+    .intro-section {
+        padding-top: var(--space-2xl);
+    }
+
+    .ticker-strip {
+        margin-top: var(--space-xl);
+    }
+
+    .ticker-item {
+        font-size: 0.7rem;
+        padding: var(--space-sm) var(--space-md);
+    }
 }
