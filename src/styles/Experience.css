@@ -5,40 +5,54 @@
     color: var(--color-text);
 }
 
-.experience-title {
-    font-size: 2rem;
-    font-weight: 700;
+.experience-heading {
     margin-bottom: var(--space-2xl);
 }
 
+.experience-heading .mono-label {
+    display: block;
+    margin-bottom: var(--space-xs);
+}
+
+.experience-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 600;
+}
+
 .experience-grid {
-    display: grid;
-    gap: var(--space-2xl);
+    display: flex;
+    flex-direction: column;
 }
 
 .experience-item {
     display: grid;
-    grid-template-columns: minmax(180px, 230px) 1fr;
+    grid-template-columns: minmax(120px, 150px) minmax(180px, 220px) 1fr;
     gap: var(--space-lg);
     align-items: start;
+    padding: var(--space-lg) 0;
+    border-top: 1px solid var(--color-border);
+}
+
+.experience-item:last-child {
+    border-bottom: 1px solid var(--color-border);
+}
+
+.experience-date {
+    padding-top: 0.2em;
 }
 
 .experience-role {
-    color: var(--color-gold);
-    font-weight: 700;
-    font-size: 1.05rem;
+    font-family: var(--font-display);
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 1.1rem;
     margin-bottom: var(--space-xs);
 }
 
 .experience-company {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: var(--space-xs);
-}
-
-.experience-date {
+    font-size: 0.95rem;
     color: var(--color-text-muted);
-    font-size: 0.9rem;
 }
 
 .experience-description {
@@ -49,7 +63,7 @@
 }
 
 .experience-link {
-    color: var(--color-gold);
+    color: var(--color-accent);
     font-weight: 600;
     text-decoration: none;
     display: inline-flex;
@@ -64,14 +78,18 @@
 }
 
 .experience-link:focus-visible {
-    outline: 2px solid var(--color-gold);
+    outline: 2px solid var(--color-accent);
     outline-offset: 2px;
 }
 
 /* — Tablet — */
 @media (max-width: 1024px) {
     .experience-item {
-        grid-template-columns: minmax(150px, 200px) 1fr;
+        grid-template-columns: minmax(110px, 140px) 1fr;
+    }
+
+    .experience-date {
+        grid-row: 1 / 3;
     }
 }
 
@@ -79,13 +97,14 @@
 @media (max-width: 768px) {
     .experience-item {
         grid-template-columns: 1fr;
+        gap: var(--space-sm);
+    }
+
+    .experience-date {
+        grid-row: auto;
     }
 
     .experience-description {
-        padding-top: var(--space-sm);
-    }
-
-    .experience-title {
-        font-size: 1.5rem;
+        padding-top: var(--space-xs);
     }
 }

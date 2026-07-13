@@ -9,19 +9,19 @@
     text-align: initial;
 }
 
-.about-title {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    font-size: 2rem;
-    font-weight: 700;
+.about-heading {
     margin-bottom: var(--space-lg);
 }
 
-.about-icon {
-    font-size: 2rem;
-    line-height: 1;
-    color: var(--color-gold);
+.about-heading .mono-label {
+    display: block;
+    margin-bottom: var(--space-xs);
+}
+
+.about-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3vw, 2.25rem);
+    font-weight: 600;
 }
 
 .about-text {
@@ -29,15 +29,11 @@
     line-height: 1.7;
     text-align: justify;
     color: var(--color-text-muted);
-    max-width: 100%;
+    max-width: 68ch;
 }
 
 /* — Mobile — */
 @media (max-width: 768px) {
-    .about-title {
-        font-size: 1.5rem;
-    }
-
     .about-text {
         font-size: 0.95rem;
     }

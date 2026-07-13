@@ -3,10 +3,10 @@ import '../../styles/About.css'
 function About() {
 	return (
 		<section className='about-section' id='about'>
-			<h2 className='about-title'>
-				<span className='material-symbols-outlined about-icon'>remember_me</span>
-				Sobre Mi
-			</h2>
+			<div className='about-heading'>
+				<span className='mono-label'>Perfil</span>
+				<h2 className='about-title'>Sobre mí</h2>
+			</div>
 			<p className='about-text'>
 				Estudiante de Ingeniería de Software en la Universidad Católica Andrés Bello,
 				apasionado por el desarrollo de software y la innovación tecnológica. Me centro
