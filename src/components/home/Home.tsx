@@ -68,9 +68,30 @@ function Home() {
                             company: 'Humanet',
                             time: 'jul 2025 - nov 2025',
                             description:
-                                'Creamos un asistente virtual basado en inteligencia artificial para personas en busca de empleo llamado Emiliana.ai. Formé parte del equipo que creó la marca (nombre, eslogan, colores, tipografía, diseño del sitio web y presencia en redes sociales). Participé en la investigación y el desarrollo de la inteligencia artificial y creé las indicaciones correspondientes para cada función. Fui responsable de la comunicación entre los jefes de los equipos de desarrollo y comunicaciones, con el fin de garantizar una mejor comprensión de la herramienta y un trabajo más eficaz. Supervisé las funcionalidades del asistente, realizando una serie de pruebas para garantizar que se cumplían todas las características definidas. Desarrollé e investigué diferentes formas de lograr el rastreo y el scraping web de la manera más eficaz.',
+                                `Creamos un asistente virtual basado en inteligencia artificial para personas en busca de empleo llamado Emiliana.ai.
+                                - Formé parte del equipo que creó la marca (nombre, eslogan, colores, tipografía, diseño del sitio web y presencia en redes sociales).
+                                - Participé en la investigación y el desarrollo de la inteligencia artificial y creé las indicaciones correspondientes para cada función.
+                                - Fui responsable de la comunicación entre los jefes de los equipos de desarrollo y comunicaciones, con el fin de garantizar una mejor comprensión de la herramienta y un trabajo más eficaz.
+                                - Supervisé las funcionalidades del asistente, realizando una serie de pruebas para  garantizar que se cumplían todas las características definidas.
+                                - Desarrollé e investigué diferentes formas de lograr el rastreo y el scraping web de la manera más eficaz.`,
                             linkUrl: 'https://humanet.com'
+                        },
+
+                        {
+                            role: 'Automation Project Engineer',
+                            company: 'Progracademy',
+                            time: 'mar 2026 - aug 2026',
+                            description:
+                                `- Diseñé, planifiqué y desarrollé, junto con un compañero de equipo, un sistema de automatización para gestionar 375 sesiones semanales de tutoría, eliminando así la necesidad de realizar tareas manualmente.
+
+- Evalué alternativas de arquitectura y migración (incluido un backend de Node.js con arquitectura hexagonal) para garantizar la escalabilidad a largo plazo y la calidad técnica de la solución.
+
+- Implementé un sistema de evaluación de tutores basado en IA y la generación automática de informes en PDF, con envío automático por correo electrónico a las partes interesadas.
+
+- Trabajé a distancia en un entorno ágil junto con mi compañero de desarrollo, perfeccionando la solución en función de los comentarios directos de los supervisores del proyecto.`,
+                            linkUrl: 'https://progracademy.com'
                         }
+
                     ]}
                 />
 
