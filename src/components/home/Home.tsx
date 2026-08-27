@@ -83,11 +83,8 @@ function Home() {
                             time: 'mar 2026 - aug 2026',
                             description:
                                 `- Diseñé, planifiqué y desarrollé, junto con un compañero de equipo, un sistema de automatización para gestionar 375 sesiones semanales de tutoría, eliminando así la necesidad de realizar tareas manualmente.
-
 - Evalué alternativas de arquitectura y migración (incluido un backend de Node.js con arquitectura hexagonal) para garantizar la escalabilidad a largo plazo y la calidad técnica de la solución.
-
 - Implementé un sistema de evaluación de tutores basado en IA y la generación automática de informes en PDF, con envío automático por correo electrónico a las partes interesadas.
-
 - Trabajé a distancia en un entorno ágil junto con mi compañero de desarrollo, perfeccionando la solución en función de los comentarios directos de los supervisores del proyecto.`,
                             linkUrl: 'https://progracademy.com'
                         }
